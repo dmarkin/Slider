@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+/*-------------------------Slider block---------------------------*/
+.slider-1,
+.slider-2 {
+    padding: 30px 0 0 20px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.panel {
+    float: left;
+    width: 350px;
+    height: 510px;
+    z-index: 5;
+}
+
+.shortcut {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 25%;
+    border: none;
+    outline: 1px solid #dddddd;
+    font-family: Arial;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffeaff;
+    padding: 10%;
+    box-sizing: border-box;
+}
+
+.shortcut.gray,
+.shortcut.gray.active,
+.shortcut.gray.active:after {
+    background-color: #bbbbbb;
+}
+
+.shortcut.pink,
+.shortcut.pink.active,
+.shortcut.pink.active:after {
+    background-color: #ffb7cc;
+}
+
+.shortcut.red,
+.shortcut.red.active,
+.shortcut.red.active:after {
+    background-color: #ff5895;
+}
+
+.shortcut.rose,
+.shortcut.rose.active,
+.shortcut.rose.active:after {
+    background-color: #b97abc;
+}
+
+.shortcut.active:after {
+    content: "";
+    position: absolute;
+    top: 54px;
+    right: 0;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    width: 20px;
+    height: 20px;
+    margin-right: -7px;
+    z-index: 10;
+}
+
+.slides-block {
+    width: 910px;
+    height: 510px;
+    position: relative;
+    overflow: hidden;
+}
+
+.slides {
+    position: absolute;
+    display: inline-block;
+    left: 0;
+    top: 0;
+    float: left;
+    width: 3640px;
+    height: 510px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+/*.slides div {
+    float: left;
+    width: 910px;
+    height: 345px;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}*/
