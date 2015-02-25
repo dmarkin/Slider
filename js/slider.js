@@ -6,14 +6,15 @@
         'images/image03.jpg',
         'images/image04.jpg'];
 
+    //constructor for class Slider
     function Slider(node, arrayOfImages) {
         this.node = node;
-        this.images = images;
+        this.images = arrayOfImages;
         this.createSliderStructure(this.node);
         this.currentSlide = 0;
         this.sliderTimer = null;
         this.slideWidth = 910;
-        this.delegateEvents();
+        this.sliderSetEventListeners();
         this.runSlider();
     }
 
@@ -30,21 +31,23 @@
                     .append($('<img>').attr('src', this.images[1]))
                     .append($('<img>').attr('src', this.images[2]))
                     .append($('<img>').attr('src', this.images[3]))));
-    }
+    };
 
+    //run slider with interval 3s
     Slider.prototype.runSlider = function () {
         this.sliderTimer = setInterval(this.nextSlide.bind(this), 3000);
-    }
+    };
 
-    Slider.prototype.nextSlide = function (slideNum) {
+    //goto to slide with mentioned number
+    Slider.prototype.nextSlide = function () {
         this.currentSlide += 1;
         if (this.currentSlide === 4) {
             this.currentSlide = 0;
         }
         this.animate(this.currentSlide);
-    }
+    };
 
-    //animated scrolling
+    //animated slides scrolling
     Slider.prototype.animate = function (slideNum) {
         var _this = this;
 
@@ -52,12 +55,13 @@
             _this.node.find('.shortcut.active').removeClass('active');
             _this.node.find('.shortcut').eq(slideNum).addClass('active');
         });
-    }
+    };
 
     //set event listeners for slider
-    Slider.prototype.delegateEvents = function () {
+    Slider.prototype.sliderSetEventListeners = function () {
         var _this = this;
 
+        //stop and go slider after pause at 5s
         this.node.find('.shortcut').on('click', (function () {
             clearTimeout(_this.pause);
             _this.pause = null;
@@ -67,11 +71,11 @@
             clearInterval(_this.sliderTimer);
             _this.pause = setTimeout(function () {
                 _this.runSlider();
-            }, 3000);
+            }, 2000);
         }));
-    }
+    };
 
-    //create 2 sliders (for example)
+    //create 2 sliders (for example); it's possible to create more sliders at page
     window.slider1 = new Slider($('.slider-1'), images);
     window.slider2 = new Slider($('.slider-2'), images);
 })();

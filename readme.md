@@ -3,5 +3,7 @@ Animated transitions between slides. By clicking on the plate on the left there 
 The upper die - the first slide, the second from the top - the second, and so on.
 Immediately after the initialization mode is activated at the slider autoscroll: show the next slide every 3 seconds.
 If the user clicks on one of the shortcut, navigate to the slide you want to disable auto scroll. Autoscroll need to include 5 seconds after the last time a user clicks on the shortcut.
-Autoscroll cyclic: with the last slide there is a transition to first. **You can lay a few sliders.**
-Used jQuery. *Slider works in IE9+.*
+Autoscroll cyclic: with the last slide there is a transition to first.
+**On the page can work few independed sliders.**
+Used jQuery.
+*Slider works in IE9+.*

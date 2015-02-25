@@ -6,9 +6,9 @@
 /*-------------------------Slider block---------------------------*/
 .slider-1,
 .slider-2 {
+    width: 100%;
     padding: 30px 0 0 20px;
     box-sizing: border-box;
-    width: 100%;
 }
 
 .panel {
@@ -25,12 +25,11 @@
     height: 25%;
     border: none;
     outline: 1px solid #dddddd;
-    font-family: Arial;
-    font-size: 16px;
-    font-weight: bold;
+    font: bold 16px/1.25 Arial;
     color: #ffeaff;
     padding: 10%;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .shortcut.gray,
@@ -58,46 +57,37 @@
 }
 
 .shortcut.active:after {
+    width: 20px;
+    height: 20px;
     content: "";
     position: absolute;
     top: 54px;
     right: 0;
+    transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
-    transform: rotate(45deg);
-    width: 20px;
-    height: 20px;
     margin-right: -7px;
     z-index: 10;
 }
 
 .slides-block {
+    position: relative;
     width: 910px;
     height: 510px;
-    position: relative;
     overflow: hidden;
 }
 
 .slides {
-    position: absolute;
     display: inline-block;
-    left: 0;
-    top: 0;
     float: left;
     width: 3640px;
     height: 510px;
+    position: absolute;
+    left: 0;
+    top: 0;
     margin: 0;
     padding: 0;
     z-index: 1;
 }
-
-/*.slides div {
-    float: left;
-    width: 910px;
-    height: 345px;
-    margin: 0;
-    padding: 0;
-    z-index: 1;
-}*/
